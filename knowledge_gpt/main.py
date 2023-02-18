@@ -18,13 +18,13 @@ def clear_submit():
     st.session_state["submit"] = False
 
 
-st.set_page_config(page_title="UAPDF2GPT", page_icon="📖", layout="wide")
-st.header("ПДФАНАЛІТИКА")
+st.set_page_config(page_title="PDF2AI", page_icon="📖", layout="wide")
+st.header("PDF2AI")
 
 sidebar()
 
 uploaded_file = st.file_uploader(
-    "Загрузити pdf, docx, or txt file",
+    "Завантажити pdf, docx, чи txt файл",
     type=["pdf", "docx", "txt"],
     help="Відскановані документи не підтримаються!(поки що)",
     on_change=clear_submit,
