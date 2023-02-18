@@ -51,8 +51,8 @@ if uploaded_file is not None:
 
 query = st.text_area("Задайте питання щодо інформації в документі", on_change=clear_submit)
 with st.expander("Advanced Options"):
-    show_all_chunks = st.checkbox("Show all chunks retrieved from vector search")
-    show_full_doc = st.checkbox("Show parsed contents of the document")
+    show_all_chunks = st.checkbox("Показати всі фрагменти, знайдені в результаті векторного пошуку")
+    show_full_doc = st.checkbox("Показати парсинг вмісту документу")
 
 if show_full_doc and doc:
     with st.expander("Document"):
