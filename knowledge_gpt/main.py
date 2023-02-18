@@ -50,16 +50,16 @@ if uploaded_file is not None:
         st.error(e._message)
 
 query = st.text_area("Задайте питання щодо інформації в документі", on_change=clear_submit)
-with st.expander("Advanced Options"):
+with st.expander("Додаткові Опції"):
     show_all_chunks = st.checkbox("Показати всі фрагменти, знайдені в результаті векторного пошуку")
     show_full_doc = st.checkbox("Показати парсинг вмісту документу")
 
 if show_full_doc and doc:
-    with st.expander("Document"):
+    with st.expander("Документ"):
         # Hack to get around st.markdown rendering LaTeX
         st.markdown(f"<p>{wrap_text_in_html(doc)}</p>", unsafe_allow_html=True)
 
-button = st.button("Submit")
+button = st.button("Надіслати")
 if button or st.session_state.get("submit"):
     if not st.session_state.get("api_key_configured"):
         st.error("Будь ласка введіть ваш OpenAI API key!")
